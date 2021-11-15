@@ -1,0 +1,12 @@
+Flask==1.1.2
+Click==7.1.2
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
+numpy==1.20.1
+Cython==0.29.23
+pickle-mixin==1.0.2
+pickleshare==0.7.5
+

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" sizes="16x16">
+    <link href="//db.onlinewebfonts.com/c/67137b5f6928edc941186baaab5a664b?family=Lemon/Milk" rel="stylesheet" type="text/css"/>
+    <title>Video Surveillance System</title>
+    <style>
+    input {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+    .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay2 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, .94);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  .overlay2 a {
+    padding: 8px;
+    color: rgb(128, 125, 125);
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay2 a:hover, .overlay2 a:focus {
+    color: #ffffff;
+  }
+  .overlay2 .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    font-size: 60px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay2 a{font-size: 20px}
+    .overlay .closebtn
+    .overlay2 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+
+  </style>
+</head>
+
+<body>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="/train">Train</a>
+      <a href="/">Test</a>
+      <a href="#" onclick="closeNav(); openNav2()">Help</a>
+      <a href="https://heyjay.codes/">Contact</a>
+    </div>
+  </div>
+
+  <div id="myNav2" class="overlay2" >
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+    <div class="overlay-content"
+         style="color: blanchedalmond;
+         margin-top: -15px;">
+      <img src = "https://cdn-icons-png.flaticon.com/512/868/868681.png"
+           style= "max-width: 90px;
+                   margin-top: -12px;
+                   margin-bottom: 3px;">
+      <h4><u> How To Use</u></h4>
+      <div class="d-flex justify-content-center" 
+           style="text-align: left;
+                  font-size: x-large;">
+        <div class="flex-column" style="max-width: 700px; margin-top: 8px;">
+          <p>Step 1: Get DataSet in a Zip File.</p>
+          <img src="static\Blank diagram.jpeg" style="max-width:fit-content; max-height: 40%;">
+          <p>Step 2: Submit the file.</p>
+          <p>Step 3: Wait Encoding file will start automatically download.</p>
+          <div class= "d-flex align-items-start">
+            <a href="https://www.kaggle.com/rawatjitesh/avengers-face-recognition"><p>Sample Dataset</p></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div style="background-image: url('https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); height:100vh">
+    <div class="align-self-stretch" 
+    style="background-color: rgba(255, 255,255, .53);
+           position: absolute;
+           margin: 18px;
+           top: 0; right: 0; bottom: 0; left: 0;
+           border: 1px solid black">
+      <span style="margin-left:3px; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <a onclick="openNav2()"><img src = "https://cdn-icons-png.flaticon.com/512/868/868681.png"
+           style= "max-width: 44px; 
+                   margin-top: 2px; 
+                   margin-right:4px ;
+                   right: 0;
+                   top:0;
+                   position : absolute;">
+      </a>
+      <div class="d-flex justify-content-center ">
+        <div style="max-width: 25%; text-align: center; margin-top: -42px;" class="flex-column flex-nowrap">
+          <div class="p-2">
+            <img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
+                style="max-width: 40%;">
+          </div>
+          <div class="p-2">
+            <h2 style="font-family: Lemon/Milk">Video Surveillance System</h2>
+          </div>
+          <div class="p-2">
+            <h4>It's easy to Use Video Surveillance system. </h4>
+          </div>
+          
+            <div class="p-2" style="margin-top: -14px;"> 
+                <div class="file btn btn-lg btn-primary"
+                    style=" position: relative;
+                            overflow: hidden;" >
+                Upload Data Folder
+                    <input type="file" id="En_file_name" name="file" onchange="UploadEn()"/>
+                </div>
+                <p id="demo_En_file_name"> ( Zip File )</p>
+            </div>
+            <div class="p-2" style="margin-top: -10px;"> 
+                <button type="button" type ="submit" id="Submit" form="form1" value="Submit" class="btn btn-primary" onclick="kario()">Submit</button>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p style="color: crimson; margin-bottom: -18px;">{{ message }}</p>
+                  {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                {% block body %}{% endblock %}
+            </div>
+          <div class="d-flex justify-content-around" 
+               style="margin-top: 18px;
+               margin-left: 60px;
+               max-width: 200px;
+               text-align: center;">
+              <a href="https://www.linkedin.com/in/jay-sood/" target="_blank" >
+                <img src="https://image.flaticon.com/icons/png/512/1409/1409945.png" loading="lazy" width="23" alt="">
+              </a>
+              <a href="https://github.com/Jaisood08" target="_blank" >
+                <img src="https://image.flaticon.com/icons/png/512/270/270798.png" loading="lazy" width="23" alt="">
+              </a>
+              <a href="https://heyjay.codes/" target="_blank" >
+                <img src="https://image.flaticon.com/icons/png/512/2103/2103562.png" loading="lazy" width="23" alt="">
+              </a>
+              <a href="mailto:jaisood08@gmail.com" target="_blank" >
+                  <img src="https://image.flaticon.com/icons/png/512/2965/2965306.png" loading="lazy" width="22" alt="">
+              </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  function Upload() {
+    var x = document.getElementById("Video_file_name").value;
+    document.getElementById("demo_Video_file_name").innerHTML = x;
+  }
+  function UploadEn() {
+    var x = document.getElementById("En_file_name").value;
+    document.getElementById("demo_En_file_name").innerHTML = x;
+  }
+  function kario() {
+    
+    my_form=document.createElement('FORM');
+    my_form.name='myForm';
+    my_form.method='POST';
+    my_form.action='/dataset';
+    my_form.enctype = "multipart/form-data";
+
+    my_tb = document.getElementById("En_file_name");
+    my_form.appendChild(my_tb);
+    document.body.appendChild(my_form);
+    my_form.submit();
+
+    if ( document.getElementById("Submit").classList[1] == "btn-primary" )
+      {
+        document.getElementById("Submit").classList.remove("btn-primary");
+        document.getElementById("Submit").classList.add("btn-outline-success");
+      }
+    else
+      {
+        document.getElementById("Submit").classList.remove("btn-primary");
+        document.getElementById("Submit").classList.add("btn-outline-danger");
+      }
+    var X = document.getElementById("Submit").classList;
+    console.log(X); 
+  }
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  function openNav2() {
+    document.getElementById("myNav2").style.width = "100%";
+  }
+
+  function closeNav2() {
+    document.getElementById("myNav2").style.width = "0%";
+  }
+
+
+</script>
+
+</html>
