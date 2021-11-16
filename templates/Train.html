@@ -160,8 +160,8 @@
       <div class="d-flex justify-content-center ">
         <div style="max-width: 25%; text-align: center; margin-top: -42px;" class="flex-column flex-nowrap">
           <div class="p-2">
-            <img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
-                style="max-width: 40%;">
+            <a href="/"><img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
+                style="max-width: 40%;"></a>
           </div>
           <div class="p-2">
             <h2 style="font-family: Lemon/Milk">Video Surveillance System</h2>
@@ -190,6 +190,7 @@
                 {% endwith %}
                 {% block body %}{% endblock %}
             </div>
+            <a id="download" style ="visibility: hidden;" href="{{ url_for('uploads', filename=filename) }}">Download</a>
           <div class="d-flex justify-content-around" 
                style="margin-top: 18px;
                margin-left: 60px;
@@ -215,6 +216,16 @@
 </body>
 
 <script>
+  console.log("{{ url_for('uploads', filename=filename) }}");
+  if("{{ url_for('uploads', filename=filename) }}"=="/uploads/")
+  {
+    document.getElementById("download").style.visibility = "hidden";
+  }
+  else
+  {
+    document.getElementById("download").style.visibility = "visible";
+    document.getElementById("download").click();
+  }
   function Upload() {
     var x = document.getElementById("Video_file_name").value;
     document.getElementById("demo_Video_file_name").innerHTML = x;

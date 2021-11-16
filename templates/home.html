@@ -162,8 +162,9 @@
       <div class="d-flex justify-content-center ">
         <div style="max-width: 25%; text-align: center; margin-top: -42px;" class="flex-column flex-nowrap">
           <div class="p-2">
-            <img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
+            <a href="/"><img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
                 style="max-width: 40%;">
+            </a>
           </div>
           <div class="p-2">
             <h2 style="font-family: Lemon/Milk">Video Surveillance System</h2>
@@ -221,11 +222,47 @@
         </div>
       </div>
     </div>
+    <div class="align-self-stretch"
+    id = "Graph" 
+    style="background-color: rgb(255, 255, 255);
+           position: absolute;
+           margin: 18px;
+           top: 0; right: 0; bottom: 0; left: 0;
+           border: 1px solid black">
+        <div class="d-flex justify-content-center ">
+          <div style="max-width: 80%; text-align: center; margin-top: 0;" class="flex-column flex-nowrap">
+            <div class="p-2">
+              <a href="/"><img src="https://cdn4.iconfinder.com/data/icons/electronics-material-1/128/50-256.png" 
+                  style="max-width: 14%;">
+              </a>
+                </div>
+            <div class="p-2">
+              <h2 style="font-family: Lemon/Milk">Video Surveillance System</h2>
+              <h4 style="font-family: Lemon/Milk"><u>__ Result __</u></h4>
+            </div>
+            <img src = "{{ url_for('uploads', filename=filename) }}"
+                 style="max-height: 55%;
+                         margin-top: -17px;">
+          </div>
+        </div>
+    </div>
   </div>
   
 </body>
 
 <script>
+  console.log("{{ url_for('uploads', filename=filename) }}");
+  if("{{ url_for('uploads', filename=filename) }}"=="/uploads/")
+  {
+    document.getElementById("Graph").style.visibility = "hidden";
+  }
+  else
+  {
+    document.getElementById("Graph").style.visibility = "visible";
+    document.getElementById("Submit").classList.remove("btn-primary");
+    document.getElementById("Submit").classList.add("btn-outline-success");
+  }
+
   function Upload() {
     var x = document.getElementById("Video_file_name").value;
     document.getElementById("demo_Video_file_name").innerHTML = x;
@@ -248,7 +285,7 @@
     if ( document.getElementById("Submit").classList[1] == "btn-primary" )
       {
         document.getElementById("Submit").classList.remove("btn-primary");
-        document.getElementById("Submit").classList.add("btn-outline-success");
+        document.getElementById("Submit").classList.add("btn-outline-warning");
       }
     else
       {
