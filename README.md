@@ -15,10 +15,17 @@ images to the network:
 o Two of these images are example faces of the same person.   
 o The third image is a random face from our dataset and is not the same person as the other two images.  
 
+Steps:  
+1. Go to Train Page And Train Model on Your Own Dataset.     
+2. Download the model(.pickle file).  
+3. Go to Test Page And Upload both video and downloaded model.  
+4. Submit and a Map Will be Genrated Shorlty For Your Video File.  
+
 Give Dataset Input Like:  
 ![Dataset](https://github.com/Jaisood08/Video_surveillance_Project-/blob/main/Dataset.jpeg)
 
 FlowChart:- 
+![Train](https://github.com/Jaisood08/Video_surveillance_Project-/blob/main/FlowChart.jpeg)
 
 OUTPUT:  
 ![Train](https://github.com/Jaisood08/Video_surveillance_Project-/blob/main/Train.jpg)
